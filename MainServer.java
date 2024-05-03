@@ -4,6 +4,7 @@ import java.security.*;
 import javax.crypto.*;
 import javax.crypto.spec.*;
 
+
 public class MainServer {
     public static void main(String[] args) {
         try {
@@ -11,11 +12,18 @@ public class MainServer {
             ServerSocket serverSocket = new ServerSocket(12345);
             
             System.out.println("Servidor esperando conexiones...");
-            
+
+    
+
             while (true) {
+        
+                
+        
                 // Esperar a que un cliente se conecte
                 Socket clientSocket = serverSocket.accept();
-                
+                System.out.print("SECURE INIT");
+        
+
                 // Crear un nuevo delegado del servidor para manejar la conexión con este cliente
                 ServerDelegate delegate = new ServerDelegate(clientSocket);
                 delegate.start();

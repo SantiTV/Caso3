@@ -1,5 +1,7 @@
 import java.io.IOException;
+import java.math.BigInteger;
 import java.net.Socket;
+
 
 public class ServerDelegate extends Thread {
     private Socket clientSocket;
@@ -10,10 +12,20 @@ public class ServerDelegate extends Thread {
 
     public void run() {
         try {
+            //Traer clave simetrica
+
+            Simetrica simetrica = new Simetrica();
+            simetrica.generarClaves();
+            
+            BigInteger cifrado =  simetrica.getClaveCifrado();
+            BigInteger autentica = simetrica.getClaveAutenticacion();
+            
             // Comunicacion con el cliente
 
-            //Paso 2 C(K_w-, Reto)
+
+            //Paso 2 C(K_w-, Reto   )
         
+                
         
         
         

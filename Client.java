@@ -3,7 +3,7 @@ import java.net.Socket;
 
 public class Client {
     public static void main(String[] args) {
-        try {
+            try {
             // Crear un Socket para conectarse al servidor en la dirección y puerto especificados
             Socket socket = new Socket("localhost", 12345);
             
