@@ -7,14 +7,11 @@ import java.security.MessageDigest;
 
 public class Simetrica {
 
-    private BigInteger claveCifrado;
-    private BigInteger claveAutenticacion;
+    public  BigInteger claveCifrado ;
+    public  BigInteger claveAutentificacion;
 
-    public Simetrica() {
-        generarClaves();
-    }
 
-    public void generarClaves() {
+    public static void main(String[] args) {
         try {
 
             BigInteger p = new BigInteger("00cdfbc25c3409dc5e2c195380628450d45e4da1fd10dde441bd475f729410c588206abb" +
@@ -47,8 +44,6 @@ public class Simetrica {
 
             // Imprimir las claves generadas
 
-            claveCifrado = new BigInteger(bytesToHex(encryptionKey));
-            claveAutenticacion = new BigInteger(bytesToHex(authenticationKey));
     
             System.out.println("Clave para cifrado: " + bytesToHex(encryptionKey));
             System.out.println("Clave para autenticación: " + bytesToHex(authenticationKey));
@@ -56,17 +51,6 @@ public class Simetrica {
             e.printStackTrace();
         }
     }
-
-
-        // Método para obtener la clave de cifrado
-        public BigInteger getClaveCifrado() {
-            return claveCifrado;
-        }
-    
-        // Método para obtener la clave de autenticación
-        public BigInteger getClaveAutenticacion() {
-            return claveAutenticacion;
-        }
 
     // Método para convertir bytes a representación hexadecimal
     private static String bytesToHex(byte[] bytes) {
@@ -76,6 +60,4 @@ public class Simetrica {
         }
         return result.toString();
     }
-
-
 }

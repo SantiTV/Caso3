@@ -32,4 +32,9 @@ public class MainServer {
             e.printStackTrace();
         }
     }
+
+    public String getMensaje() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getMensaje'");
+    }
 }
